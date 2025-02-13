@@ -1,0 +1,38 @@
+flowchart TD
+    subgraph Vendors
+        V1["Halal Vendor 1"]
+        V2["Halal Vendor 2"]
+        V3["Halal Vendor 3"]
+    end
+
+    subgraph HalalChain Platform
+        H1["Product Listing"]
+        H2["Order Management"]
+        H3["User Authentication"]
+    end
+
+    subgraph Multi-Platform Marketplaces
+        M1["Amazon"]
+        M2["Shopify"]
+        M3["Alibaba"]
+        M4["WooCommerce"]
+    end
+
+    subgraph Users
+        U1["Buyer 1"]
+        U2["Buyer 2"]
+        U3["Buyer 3"]
+    end
+
+    subgraph Integration
+        I1["API Sync"]
+        I2["ERP System"]
+        I3["Payment Gateway"]
+    end
+
+    V1 & V2 & V3 -->|Lists Products| H1
+    H1 -->|Expands Listings| M1 & M2 & M3 & M4
+    U1 & U2 & U3 -->|Browse & Purchase| H1
+    H2 -->|Syncs Orders| I1
+    I1 -->|Manages Transactions| I2
+    I2 -->|Processes Payments| I3
