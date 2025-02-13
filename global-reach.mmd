@@ -1,0 +1,45 @@
+C4Context
+    title Global E-Commerce with HalalChain & Adobe Commerce
+    
+    Enterprise_Boundary(b0, "HalalChain Ecosystem") {
+        
+        Person(vendor, "Global Vendors", "Sell halal products internationally with localization & multi-currency support.")
+        Person(customer, "International Customers", "Shop for halal-certified products worldwide.")
+
+        System(halalchain, "HalalChain Platform", "Manages vendors, product listings, and global e-commerce operations.")
+
+        Enterprise_Boundary(b1, "Adobe Commerce Integration") {
+            System(adobe, "Adobe Commerce (Magento 2)", "Provides multi-platform, multi-vendor support with scalability.")
+            System_Ext(marketplaces, "Global Marketplaces", "Amazon, Shopify, Alibaba, WooCommerce, etc.")
+        }
+
+        Enterprise_Boundary(b2, "Global Commerce & Compliance") {
+            System(global_payments, "Multi-Currency & Payment Gateway", "Supports international transactions.")
+            System(global_shipping, "Cross-Border Shipping & Tax Compliance", "Handles shipping, taxes, and duties for global expansion.")
+        }
+
+        Enterprise_Boundary(b3, "Advanced Integrations") {
+            System(ai, "AI & Analytics", "Personalized shopping, targeted marketing, and customer insights.")
+            System(blockchain, "Blockchain & Security", "Ensures trust and halal certification verification.")
+            System(iot, "IoT & Tracking", "Real-time monitoring of products and supply chain.")
+            System(erp, "ERP System", "Streamlines vendor inventory and order processing.")
+        }
+    }
+
+    %% Relationships
+    BiRel(vendor, halalchain, "Lists products & manages sales")
+    BiRel(customer, halalchain, "Browses & purchases products")
+
+    Rel(halalchain, adobe, "Integrates for flexible e-commerce operations")
+    Rel(adobe, marketplaces, "Expands reach via multi-platform selling")
+
+    Rel(halalchain, global_payments, "Supports localized payments & multi-currency transactions")
+    Rel(halalchain, global_shipping, "Manages cross-border commerce, taxes, & regulations")
+
+    Rel(halalchain, ai, "Enhances personalization & marketing")
+    Rel(halalchain, blockchain, "Ensures halal certification & security")
+    Rel(halalchain, iot, "Monitors supply chain & product authenticity")
+    Rel(halalchain, erp, "Optimizes inventory & order fulfillment")
+
+    %% Styling
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="2")
