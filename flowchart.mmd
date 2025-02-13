@@ -1,0 +1,24 @@
+graph TD;
+    A[User Request] -->|API Call| B{Integration Layer};
+    B -->|Sync Data| C[Product Management];
+    B -->|Sync Orders| D[Order Processing];
+    B -->|Sync Customers| E[Customer Data Management];
+    C --> F[Inventory Sync];
+    C --> G[Price & Promotion Updates];
+    D --> H[Multi-Platform Order Fulfillment];
+    E --> I[Customer Insights & AI Recommendations];
+    F --> J[Low Stock Alerts];
+    G --> K[Dynamic Pricing Engine];
+    H --> L[Shipping & Tax Calculation];
+    I --> M[Personalized Marketing];
+
+    subgraph Platforms
+        B1[Shopify] 
+        B2[Amazon] 
+        B3[Alibaba] 
+        B4[WooCommerce] 
+        B5[BigCommerce] 
+        B6[SAP, Oracle, Adobe Commerce]
+    end
+
+    B -->|Connects to| Platforms;
