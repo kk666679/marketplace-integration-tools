@@ -1,0 +1,25 @@
+flowchart TD
+    subgraph HalalChain_Platform
+        H1["Vendor & Product Management"]
+        H2["Halal Certification Verification"]
+        H3["Order & Transaction Processing"]
+    end
+
+    subgraph Adobe_Commerce_Magento2
+        M1["Scalable E-Commerce Engine"]
+        M2["Customizable Storefront"]
+        M3["Multi-Vendor & Multi-Platform Support"]
+    end
+
+    subgraph Integration
+        I1["AI - Data Insights"]
+        I2["Blockchain - Secure Transactions"]
+        I3["IoT - Real-Time Monitoring"]
+        I4["ERP System"]
+        I5["Payment Gateway"]
+    end
+
+    H1 & H2 & H3 -->|Powers E-Commerce| M1 & M2 & M3
+    M1 & M2 & M3 -->|Seamless Integration| I1 & I2 & I3 & I4 & I5
+    I1 & I2 & I3 -->|Enhances Transparency & Automation| H1 & H2
+    I4 & I5 -->|Optimized Transactions| H3
