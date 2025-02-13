@@ -1,0 +1,29 @@
+flowchart TD
+    subgraph HalalChain_Platform
+        H1["E-Commerce Operations"]
+        H2["Customer Engagement"]
+        H3["Order Management"]
+    end
+
+    subgraph Adobe_Commerce_Magento2
+        M1["Personalized Shopping"]
+        M2["Targeted Marketing"]
+        M3["Data-Driven Decisions"]
+    end
+
+    subgraph AI_Analytics
+        A1["Customer Segmentation"]
+        A2["Predictive Insights"]
+        A3["Automated Campaigns"]
+    end
+
+    subgraph Customer_Experience
+        C1["Tailored Product Recommendations"]
+        C2["Dynamic Pricing & Promotions"]
+        C3["Behavior-Based Email Marketing"]
+    end
+
+    H1 & H2 & H3 -->|Marketing & Personalization| M1 & M2 & M3
+    M1 & M2 & M3 -->|Enhanced with AI| A1 & A2 & A3
+    A1 & A2 & A3 -->|Optimized Engagement| C1 & C2 & C3
+    C1 & C2 & C3 -->|Drives Conversions| H2
