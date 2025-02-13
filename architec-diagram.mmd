@@ -1,0 +1,15 @@
+flowchart TD;
+    Vendors["Vendors"] -->|"API Request"| HalalChainAPI["HalalChain API Gateway"];
+    Consumers["Consumers"] -->|"API Request"| HalalChainAPI;
+    Logistics["Logistics"] -->|"API Request"| HalalChainAPI;
+    
+    subgraph HalalChainAPI ["HalalChain API Gateway"]
+        ShopifyAdapter["Shopify Adapter"]
+        AmazonAdapter["Amazon Adapter"]
+        LogisticsService["Logistics Service"]
+        Authentication["Authentication (JWT/OAuth)"]
+    end
+    
+    HalalChainAPI --> Shopify["Shopify, Adobe"]
+    HalalChainAPI --> Amazon["Amazon, eBay"]
+    HalalChainAPI --> LogisticsProviders["DHL/UPS, FedEx"]
