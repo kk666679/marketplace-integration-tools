@@ -1,0 +1,31 @@
+flowchart TD
+    subgraph HalalChain Platform
+        H1["Product Verification"]
+        H2["Halal Compliance"]
+        H3["Transaction Management"]
+    end
+
+    subgraph AI Integration
+        AI1["Fraud Detection"]
+        AI2["Automated Certification"]
+        AI3["Supply Chain Analytics"]
+    end
+
+    subgraph Blockchain Integration
+        BC1["Smart Contracts"]
+        BC2["Immutable Halal Records"]
+        BC3["Decentralized Trust"]
+    end
+
+    subgraph IoT Integration
+        IOT1["RFID Tracking"]
+        IOT2["Real-time Monitoring"]
+        IOT3["Sensor Data"]
+    end
+
+    H1 -->|Analyzes Data| AI1 & AI2 & AI3
+    H2 -->|Stored on Ledger| BC1 & BC2 & BC3
+    H3 -->|Connected Devices| IOT1 & IOT2 & IOT3
+    AI1 & AI2 & AI3 -->|Optimized Decisions| H1
+    BC1 & BC2 & BC3 -->|Transparent Data| H2
+    IOT1 & IOT2 & IOT3 -->|Monitors Authenticity| H3
