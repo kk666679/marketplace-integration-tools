@@ -1,0 +1,5 @@
+HalalChain API Gateway
+├── /shopify/* → ShopifyAdapter
+├── /amazon/* → AmazonAdapter
+├── /ebay/* → eBayAdapter
+└── /logistics/* → LogisticsService
