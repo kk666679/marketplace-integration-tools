@@ -1,0 +1,12 @@
+C4Context
+    title Marketplace System Context
+
+    Person(customer, "Customer", "A customer who browses and purchases products.")
+    Person(vendor, "Vendor", "A vendor who lists products and processes orders.")
+    Person(admin, "Admin", "An admin who manages vendors and products.")
+
+    System(marketplaceSystem, "Marketplace System", "An e-commerce platform that connects customers with vendors.")
+    
+    Rel(customer, marketplaceSystem, "Browse, search, and purchase products.")
+    Rel(vendor, marketplaceSystem, "List products, process orders, and update stock.")
+    Rel(admin, marketplaceSystem, "Manage vendor registrations and approve products.")
