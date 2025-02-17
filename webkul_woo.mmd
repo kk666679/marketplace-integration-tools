@@ -8,7 +8,7 @@ flowchart TD
         E --> F[Proceed to Checkout]
         F --> G[Select Shipping/Payment]
         G --> H[Place Order]
-        H --> I[Order Confirmation (Vendor Notified)]
+        H --> I[Order Confirmation Vendor Notified]
     end
 
     subgraph Vendor
@@ -40,7 +40,7 @@ flowchart TD
 
     subgraph WooCommerce Multivendor
         W1[WooCommerce: Vendor Dashboard] --> W2[Manage Products]
-        W2 --> W3[Direct Listing (No Admin Approval)]
+        W2 --> W3[Direct Listing No Admin Approval]
         W3 --> W4[Products Live Immediately]
         W4 --> W5[Customer Purchases]
         W5 --> W6[Vendor: Process Order]
