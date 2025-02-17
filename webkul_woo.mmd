@@ -1,7 +1,7 @@
 flowchart TD
     subgraph Customer
         A[Customer: Browse Marketplace] --> B[Search/Filter by Vendor]
-        B --> C[View Product (Vendor-Specific)]
+        B --> C[View Product Vendor-Specific]
         C --> D{Add to Cart?}
         D -->|Yes| E[Cart: Check Vendor Stock]
         D -->|No| A
