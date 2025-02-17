@@ -1,14 +1,14 @@
-Flowchart TD
+flowchart TD
     subgraph Customer
         A[Customer: Browse Marketplace] --> B[Search/Filter by Vendor]
-        B --> C[View Product (Vendor-Specific)]
+        B --> C[View Product Vendor-Specific]
         C --> D{Add to Cart?}
         D -->|Yes| E[Cart: Check Vendor Stock]
         D -->|No| A
         E --> F[Proceed to Checkout]
         F --> G[Select Shipping/Payment]
         G --> H[Place Order]
-        H --> I[Order Confirmation (Vendor Notified)]
+        H --> I[Order Confirmation Vendor Notified]
     end
 
     subgraph Vendor
