@@ -1,0 +1,71 @@
+graph TD
+    subgraph Customer
+        A[Customer: Browse Marketplace] --> B[Search/Filter by Vendor]
+        B --> C[View Product (Vendor-Specific)]
+        C --> D{Add to Cart?}
+        D -->|Yes| E[Cart: Check Vendor Stock]
+        D -->|No| A
+        E --> F[Proceed to Checkout]
+        F --> G[Select Shipping/Payment]
+        G --> H[Place Order]
+        H --> I[Order Confirmation (Vendor Notified)]
+    end
+
+    subgraph Vendor
+        V1[Vendor: Registration Request] --> V2[Admin Approval]
+        V2 -->|Approved| V3[Vendor Login]
+        V3 --> V4[Manage Profile/Store]
+        V4 --> V5[Add/Edit Products]
+        V5 --> V6[Admin Product Approval]
+        V6 -->|Approved| V7[Products Listed]
+        I --> V8[Vendor: Process Order]
+        V8 --> V9{Confirm Shipping?}
+        V9 -->|Yes| V10[Update Tracking Info]
+        V9 -->|No| V11[Cancel Order]
+        V10 --> V12[Order Completed]
+    end
+
+    subgraph Admin
+        A1[Admin: Review Vendor Request] --> A2{Approve?}
+        A2 -->|Yes| A3[Activate Vendor Account]
+        A2 -->|No| A4[Reject Request]
+        A3 --> V7
+        V6 --> A5[Admin: Review Product]
+        A5 --> A6{Approve Product?}
+        A6 -->|Yes| V7
+        A6 -->|No| A7[Reject Product]
+        V12 --> A8[Admin: Track Commission]
+        A8 --> A9[Calculate Vendor Payout]
+    end
+
+    subgraph WooCommerce Multivendor
+        W1[WooCommerce: Vendor Dashboard] --> W2[Manage Products]
+        W2 --> W3[Direct Listing (No Admin Approval)]
+        W3 --> W4[Products Live Immediately]
+        W4 --> W5[Customer Purchases]
+        W5 --> W6[Vendor: Process Order]
+        W6 --> W7[Update Tracking Info]
+        W7 --> W8[Order Completed]
+        W8 --> W9[Admin: Track Commission]
+    end
+
+    subgraph Webkul Multivendor
+        K1[Webkul: Vendor Dashboard] --> K2[Manage Products]
+        K2 --> K3[Admin Approval Required]
+        K3 --> K4[Products Listed After Approval]
+        K4 --> K5[Customer Purchases]
+        K5 --> K6[Vendor: Process Order]
+        K6 --> K7[Update Tracking Info]
+        K7 --> K8[Order Completed]
+        K8 --> K9[Admin: Track Commission]
+    end
+
+    I --> A8
+    V12 --> O[Customer: Receive Order]
+    V11 --> O2[Customer: Refund Process]
+
+    style Customer fill:#e0f7fa,stroke:#00796b
+    style Vendor fill:#f0f4c3,stroke:#827717
+    style Admin fill:#ffcdd2,stroke:#c62828
+    style WooCommerce Multivendor fill:#d1c4e9,stroke:#512da8
+    style Webkul Multivendor fill:#c8e6c9,stroke:#388e3c
